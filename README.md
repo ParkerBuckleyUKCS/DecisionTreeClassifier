@@ -11,10 +11,10 @@ Upon execution, this program will load information from one of the files and gen
 ***Numerical data that is processed into nominal data using equidistant bins.***
 
 ***Synthetic Data - Cartesian Coordinates with Two class labels (red, blue)***
-1.	Synthetic-1.csv - Two clusters split on X axis 
-2.	Synthetiv-2.csv - Two clusters with some overlap on the X axis
-3. 	Synthetic-3.csv - Two clusters merged on the X and Y axis
-4. 	Synthetic-4.csv - Two disks, one inside of the other.
+1. Synthetic-1.csv - Two clusters split on X axis 
+2. Synthetiv-2.csv - Two clusters with some overlap on the X axis
+3. Synthetic-3.csv - Two clusters merged on the X and Y axis
+4. Synthetic-4.csv - Two disks, one inside of the other.
 
 ***Pokemon Data - 44 separate feature including Total level, HP, Attack, Def, and boolean values for each Pokemon type. (water, fire, leaf, etc...)***
 
@@ -31,3 +31,22 @@ The rectangles in the background are the bins created by the decision tree. The 
 ![Synthetic-3.csv](/Screenshots/decisionSurface_20Bins_synthetic3.JPG)
 ### Synthetic 4
 ![Synthetic-4.csv](/Screenshots/decisionSurface_10Bins_synthetic3.JPG)
+
+## Results
+
+The error on the synthetic datasets were acceptable. Here are the calculations:
+1. synthetic-1.csv : ***100%***
+2. synthetic-2.csv : ***98.5%***
+3. synthetic-3.csv: ***95%***
+4. synthetic-4.csv: ***96.5%***
+
+Error on the pokemon set was reasonable as well at 90.6% with 16 bins.
+
+At an overview, it is possible to achieve 100% accuracy on a set with at least two unique data entries, one just has to choose a large enough number of bins.
+***This comes at a cost.*** The nature of the decision tree is to memorize the training data, It is easy for the model to be overfitted.
+
+We can fine tune how closely a tree reflects it's training data by increasing or decreasing the number of bins. 
+- Increasing will yield higher accuracy on the training set but potentially lower accurracy on future data sets. 
+- Decreasing will result in quite the opposite- we will lose accuracy on the training data but, as a result, be more lenient with future data sets. 
+
+Therefore, choosing the number of bins is often the crux of data tree fitting and methods such as ***cross-validation*** help find the optimal choice of bins.
