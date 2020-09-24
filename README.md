@@ -30,7 +30,7 @@ The rectangles in the background are the bins created by the decision tree. The 
 ### Synthetic 3
 ![Synthetic-3.csv](/Screenshots/decisionSurface_20Bins_synthetic3.JPG)
 ### Synthetic 4
-![Synthetic-4.csv](/Screenshots/decisionSurface_10Bins_synthetic3.JPG)
+![Synthetic-4.csv](/Screenshots/decisionSurface_10Bins_synthetic4.JPG)
 
 ## Results
 
